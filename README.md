@@ -1,7 +1,7 @@
 # TO-DO-LIST
 ***Here You will add the task in your to do list. Which will help you for being more organized and productive. To Do List reduce mental load and decision-making.***
 # How to run this code:
-  * step 1: open first "p44_crud_operation" folder
+  * step 1: open first "project" folder
   * step 2: open cmd in same folder
   * step 3: type in cmd :
             python manage.py runserver 
