@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to our page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+</head>
+<body>
+    <div class="heading">
+        <h1>Welcome to our to do list</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            {% for errors in form.non_fields_errors %}
+                                <p>{{errors}}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {% for f in form %}
+                            {{f.label_tag}}
+                            {{f}}
+                            {{f.errors|striptags}}
+                            <br>
+                        {% endfor %}
+                        <input class="btn btn-primary" type="submit" value="Add Task">               
+                    </form>            
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>                         
+                             <th>Tasks</th>
+                             <th>Status</th>                         
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for d in data %}
+                            <tr>
+                                <td>{{d.name}}</td>
+                                <td>
+                                    <a href="{% url "delete" d.id %}" class="btn btn-success">Completed</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

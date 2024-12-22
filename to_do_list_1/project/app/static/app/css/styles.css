@@ -1,0 +1,14 @@
+.heading{
+    border: 2px solid magenta;
+    background-color: pink;
+    text-align: center;
+}
+tr:hover{
+    font-size: 20px;
+    background: linear-gradient(135deg,  rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=1 );
+}
+input{
+    width: 100%;
+    border-radius: 9px;
+}
